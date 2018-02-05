@@ -42,7 +42,7 @@ const socketMiddleware = (function(){
         // store.dispatch(actions.connecting());
 
         //Attempt to connect (we could send a 'failed' action on error)
-        socket = new WebSocket('ws://localhost:8080/')
+        socket = new WebSocket('ws://' + window.location.hostname + ':8080/')
         socket.onmessage = onMessage(socket,store)
         socket.onclose = onClose(socket,store)
         socket.onopen = onOpen(socket,store)
