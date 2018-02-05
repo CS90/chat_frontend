@@ -13,7 +13,7 @@ RUN nginx -t && service nginx stop
 
 EXPOSE 80
 
-RUN npm run build
+RUN npm install && npm run build
 COPY build /usr/share/nginx/html/
 
 CMD ["nginx", "-g", "daemon off;"]
