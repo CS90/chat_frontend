@@ -8,11 +8,12 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install nginx -y
 
 COPY default /etc/nginx/sites-enabled/
-COPY build /usr/share/nginx/html/
 
 RUN nginx -t && service nginx stop
 
 EXPOSE 80
 
 RUN npm run build
+COPY build /usr/share/nginx/html/
+
 CMD ["nginx", "-g", "daemon off;"]
