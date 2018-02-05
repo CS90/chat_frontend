@@ -5,7 +5,7 @@ server {
 	# listen 443 ssl default_server;
 	# listen [::]:443 ssl default_server;
 
-	root /usr/share/nginx/html;
+	root /code/build;
 
 	index index.html index.htm;
 
